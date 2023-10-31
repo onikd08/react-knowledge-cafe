@@ -6,10 +6,10 @@ function App() {
   return (
     <div className="container mx-auto">
       <Header></Header>
-      <div className="md:flex md:gap-6">
+      <main className="md:flex md:gap-6">
         <Blogs></Blogs>
         <Bookmarks></Bookmarks>
-      </div>
+      </main>
     </div>
   );
 }
