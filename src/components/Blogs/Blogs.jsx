@@ -11,7 +11,11 @@ const Blogs = () => {
     };
     loadData();
   }, []);
-  return <div>Total Blogs: {blogs.length}</div>;
+  return (
+    <div>
+      <h2 className="text-3xl">Total Blogs: {blogs.length}</h2>
+    </div>
+  );
 };
 
 export default Blogs;
