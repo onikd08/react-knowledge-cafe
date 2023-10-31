@@ -12,7 +12,7 @@ const Blogs = () => {
     loadData();
   }, []);
   return (
-    <div>
+    <div className="w-2/3">
       <h2 className="text-3xl">Total Blogs: {blogs.length}</h2>
     </div>
   );
