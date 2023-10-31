@@ -1,8 +1,9 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
 
-const Blog = ({ blog, handleBookmark }) => {
+const Blog = ({ blog, handleBookmark, handleMarkAsRead }) => {
   const [isBookmarked, setIsBookmarked] = useState(false);
+  const [markedRead, setMarkedRead] = useState(false);
   const {
     author,
     author_img,
@@ -56,9 +57,18 @@ const Blog = ({ blog, handleBookmark }) => {
           </span>
         ))}
       </p>
-      <p className="text-blue-500 underline mt-4 cursor-pointer">
+      <button
+        onClick={() => {
+          handleMarkAsRead(reading_time);
+          setMarkedRead(true);
+        }}
+        className={`underline mt-4 cursor-pointer ${
+          markedRead && "text-blue-500"
+        }`}
+        disabled={markedRead}
+      >
         Mark as read
-      </p>
+      </button>
     </div>
   );
 };
@@ -66,6 +76,7 @@ const Blog = ({ blog, handleBookmark }) => {
 Blog.propTypes = {
   blog: PropTypes.object.isRequired,
   handleBookmark: PropTypes.func.isRequired,
+  handleMarkAsRead: PropTypes.func.isRequired,
 };
 
 export default Blog;
