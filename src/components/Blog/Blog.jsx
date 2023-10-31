@@ -14,7 +14,7 @@ const Blog = ({ blog }) => {
     <div className="border-b-2 pb-5 mb-10">
       <img className="w-full" src={cover} alt="" />
       <div className="flex justify-between items-center mt-7">
-        <div className="flex gap-4 justify-center items-center">
+        <div className="flex gap-2 justify-center items-center">
           <img className="w-14 h-14" src={author_img} alt="" />
           <div>
             <h4 className="text-xl">{author}</h4>
@@ -22,18 +22,20 @@ const Blog = ({ blog }) => {
           </div>
         </div>
         <div>
-          <small>{reading_time} min read</small>
+          <small className="text-gray-400">{reading_time} min read</small>
         </div>
       </div>
       <h2 className="text-3xl mt-5">{title}</h2>
-      <div className="mt-5">
+      <p className="mt-5">
         {hashtags.map((tag, idx) => (
-          <small className="text-gray-400 mr-2" key={idx}>
+          <span className="text-gray-400 mr-2" key={idx}>
             #{tag}
-          </small>
+          </span>
         ))}
-      </div>
-      <p className="text-blue-500 underline mt-4">Mark as read</p>
+      </p>
+      <p className="text-blue-500 underline mt-4 cursor-pointer">
+        Mark as read
+      </p>
     </div>
   );
 };
